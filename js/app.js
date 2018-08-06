@@ -16,20 +16,21 @@ $(document).ready(function() {
         });
 
         $('#rests-list').html("");
+        $('#photos').html("");
         for(restaurant of rests) {
             $('#rests-list').append($("<li>").attr('value', restaurant.name)
-            .html("<a class='text-white' href='#'>" + restaurant.name + "</a>"));
-            $('#rests-list').append($("<li>").attr('value', restaurant.description)
-            .html("<a class='text-white' href='#'>" + restaurant.description + "</a>"));
+              .html("<a class='font-weight-bold text-uppercase text-white' href='#'>" + restaurant.name + "</a>" + "<p>" + restaurant.description +  "</p")
+            );
+            $('#photos').append($("<li>").attr('value', restaurant.image)
+              .html("<img class='img-fluid m-2 shadow mb-5 rounded' src='" + restaurant.image + "' alt='" + restaurant.name + "' />")
+            );
         }
-
-        
     });
 
     $('.tipo').on('input', function () {
         if($(this).val() === "") {
             $( "restaurantes" ).each(function( ) {
-                $(this).fadeIn('slow')
+                $(this).fadeIn('slow');
             });
         }
     });
@@ -48,5 +49,3 @@ var marker = L.marker([-23.5533,-46.6418]).addTo(mymap);
 
 // inserir marcadores percorrendo JSON
 // marker = L.marker(restaurant.latitude, restaurant.longitude).addTo(mymap);
-
-
