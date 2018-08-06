@@ -12,13 +12,14 @@
 
 
   
-  <body class="bg-dark">
+  <body class="bg-warning">
     <!--Modal - foto - botão fechar - infos dos restaurantes -->
     <section></section>
-
-    <!-- Estilizar por bootstrap-->
-    <section id="" class="start h-100 w-100 container-fluid bg-dark">
-      <div class="text-white">
+    
+    <!-- Estilizar por bootstrap / align-items-center nok-->
+    
+    <section class="container-fluid bg-dark start">
+      <div class="d-flex justify-content-center text-white">
         <h1>Foodmap</h1>
       </div>
     </section>
@@ -27,9 +28,24 @@
         Mapa
         Fotos
         -->
-    <section id="" class="principal h-100 w-100 container-fluid bg-success">
-      <div class="text-white">
-        <h1>Página principal</h1>
+    <section class="container-fluid bg-success principal">
+      <div class="d-flex justify-content-center text-white">
+        <h1>Foodmap</h1>
+      </div>
+
+      <div class="d-flex justify-content-center text-white">
+        <label><h5>Comida perto de você</h5></label>
+        <input class="tipo" type="text" placeholder="Filtrar restaurantes" />
+        <button class="filtrar">Filtrar</button>
+
+      </div>
+      
+      <div class="d-flex justify-content-center text-white">
+        <h5>mapa</h5>
+      </div>
+
+      <div class="d-flex justify-content-center text-white">
+        <h5>fotos</h5>
       </div>
     </section>
 
