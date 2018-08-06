@@ -22,6 +22,8 @@ $(document).ready(function() {
             $('#rests-list').append($("<li>").attr('value', restaurant.description)
             .html("<a class='text-white' href='#'>" + restaurant.description + "</a>"));
         }
+
+        
     });
 
     $('.tipo').on('input', function () {
@@ -33,7 +35,7 @@ $(document).ready(function() {
     });
 });
 
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+var mymap = L.map('mapid').setView([-23.5533,-46.6418], 13);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYWhtYXRyYWkiLCJhIjoiY2praHdwZmIxMHpidjNwcWhsaXlnbmxuZSJ9.jIsv6ONv_L0MN0Ap-axXRQ', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -41,3 +43,10 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
     id: 'mapbox.streets',
     accessToken: 'your.mapbox.access.token'
 }).addTo(mymap);
+
+var marker = L.marker([-23.5533,-46.6418]).addTo(mymap);
+
+// inserir marcadores percorrendo JSON
+// marker = L.marker(restaurant.latitude, restaurant.longitude).addTo(mymap);
+
+
